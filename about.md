@@ -1,0 +1,28 @@
+---
+layout: page
+title: About me
+permalink: /about/
+---
+
+![Jaromír Janisch](/media/about/jaromir.jpeg "That's me.")
+
+Jaromír Janisch finished his Master studies as a Software Engineer at University of West Bohemia in 2012. Until 2016 he worked in several software companies, mainly as a developer. He’s been always passionate about progress in artificial intelligence and decided to join the field as a researcher. In April 2017, he joined the [AIC](http://aic.fel.cvut.cz/) group at [ČVUT](https://www.fel.cvut.cz/en/) in Prague and is working on his Ph.D. there.
+
+In this blog he strives to extract main points from sometimes complicated scientific research, reformulate them in his own words and make it more accessible for people outside the field.
+
+Contact me at <span style="text-decoration: underline;">author@jaromiru.com</span>.
+
+<hr />
+
+### Publications and Talks
+
+#### ICML-2018 (July 2018, Stockholm, Sweden)
+Short presentation at [Adaptive Learning Agents (ALA)](http://ala2018.it.nuigalway.ie/) workshop.
+<!-- J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features using Deep Reinforcement Learning*, [online version](http://ala2018.it.nuigalway.ie/papers/ALA_2018_paper_24.pdf). -->
+
+#### AAAI-2019 (January 2019, Hawaii, USA)
+Short talk on the main conference: J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features using Deep Reinforcement Learning* - [paper](/media/about/aaai19_cwcf_paper.pdf) / [slides](/media/about/aaai19_cwcf_talk.pdf) / [poster](/media/about/aaai19_cwcf_poster.pdf) / [code](https://github.com/jaromiru/cwcf)
+
+<div style="padding: 10px; background-color: #fafafa; text-align: center;" markdown="1">
+[GitHub](https://github.com/jaromiru) | [DBLP](http://dblp.org/pers/hd/j/Janisch:Jarom=iacute=r)
+</div>
