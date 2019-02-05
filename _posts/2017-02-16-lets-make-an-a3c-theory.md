@@ -6,8 +6,8 @@ excerpt: This article introduces Policy Gradient Methods and A3C algorithm.
 <div style="border:1px solid #919191;padding:10px;background-color:#fafafa;" markdown="1">
 This article is part of series <i>Let's make an A3C</i>.
 
-1. <a href="/2017/02/16/lets-make-an-a3c-theory/">Theory</a>
-2. <a href="/2017/03/26/lets-make-an-a3c-implementation/">Implementation</a>
+1. <a href="/2017/02/16/lets-make-an-a3c-theory">Theory</a>
+2. <a href="/2017/03/26/lets-make-an-a3c-implementation">Implementation</a>
 </div>
 
 ## Introduction

@@ -7,10 +7,10 @@ excerpt: In this first article from series Let's make a DQN you will a learn abo
 <div style="border:1px solid #919191;padding:10px;background-color:#fafafa;" markdown="1">
 This article is part of series <i>Let's make a DQN</i>.
 
-1. <a href="/2016/09/27/lets-make-a-dqn-theory/">Theory</a>
-2. <a href="/2016/10/03/lets-make-a-dqn-implementation/">Implementation</a>
-3. <a href="/2016/10/12/lets-make-a-dqn-debugging/">Debugging</a>
-4. <a href="/2016/10/21/lets-make-a-dqn-full-dqn/">Full DQN</a>
+1. <a href="/2016/09/27/lets-make-a-dqn-theory">Theory</a>
+2. <a href="/2016/10/03/lets-make-a-dqn-implementation">Implementation</a>
+3. <a href="/2016/10/12/lets-make-a-dqn-debugging">Debugging</a>
+4. <a href="/2016/10/21/lets-make-a-dqn-full-dqn">Full DQN</a>
 5. <a href="/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay">Double DQN and Prioritized experience replay</a>
 
 </div>
