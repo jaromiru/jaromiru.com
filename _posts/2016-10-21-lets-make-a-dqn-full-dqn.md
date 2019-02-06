@@ -37,17 +37,17 @@ A drawback is that it substantially slows down the learning process. Any change 
 
 On the graph below we can see an effect of a target network in *MountainCar* problem. The values are plotted every 1000 steps and target network was updated every 10000 steps. We can  see the stair-shaped line, where the network converged to provided target values. Each drop corresponds to an update of the target network.
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/mc_dqn_q_2.png" alt="Q value in MountainCar DQN" />
+<img src="/media/dqn/mc_dqn_q_2.png" alt="Q value in MountainCar DQN" />
 
 The network more or less converged to true values after 250 000 steps. Let's look at a graph of a simple Q-network from last article (note that tracked Q function points are different):
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/256x256_q_value.png" alt="Q value in MountainCar Q-network" />
+<img src="/media/dqn/256x256_q_value.png" alt="Q value in MountainCar Q-network" />
 
 Here the algorithm converged faster, after only 100 000 steps. But the shape of the graph is very different. In the simple Q-network variant, the network went fast to the minimum of -100 and started picking the final transitions to reach true values after a while. The algorithm with target network on the other hand quickly anchored the final transitions to their true values and slowly propagated this true value further to the network.
 
 Another direct comparison can be done on the *CartPole* problem, where the differences are clear:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/cartpole_target_vs_single_2.png" alt="Q value in CartPole DQN vs Q-network" />
+<img src="/media/dqn/cartpole_target_vs_single_2.png" alt="Q value in CartPole DQN vs Q-network" />
 
 The version with target network smoothly aim for the true value whereas the simple Q-network shows some oscillations and difficulties.
 
@@ -66,7 +66,7 @@ By choosing a different loss function, we can smooth these changes. In the origi
 
 The differences between the two functions are shown in the following image:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/mse_mae.png" alt="MSE vs MAE" />
+<img src="/media/dqn/mse_mae.png" alt="MSE vs MAE" />
 
 **Note that based on recent insight (see [discussion](https://www.reddit.com/r/MachineLearning/comments/6dmzdy/d_on_using_huber_loss_in_deep_qlearning/)), the pseudo-huber loss function described below is incorrect to use. Use the original Huber function with reward clipping or MSE.**
 
@@ -76,7 +76,7 @@ The differences between the two functions are shown in the following image:
 
 > and looks like this:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/huber_loss.png" alt="Huber loss function" />
+<img src="/media/dqn/huber_loss.png" alt="Huber loss function" />
 
 > It behaves as $$ \frac{x^2}{2}$$ in `[-1 1]` region and as $$ |x| - \frac{1}{2} $$ outside, which is almost the same as the error clipping described above. This loss function is prefect for our purposes - it is fully differentiable and it's one line of code.
 <br />
@@ -89,7 +89,7 @@ The only changes against the old versions are that the *Brain* class now contain
 
 Let's look at the performance. In the following graph, you can see smoothed reward, along with the estimated Q value in one point. Values were plotted every 1000 steps.
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/cartpole_dqn_reward_q_value.png" alt="CartPole reward and Q value" />
+<img src="/media/dqn/cartpole_dqn_reward_q_value.png" alt="CartPole reward and Q value" />
 
 We see that the Q function estimate is much more stable than in the simple Q-learning case. The reward tend to be stable too, but at around step 2 200 000, the reward reached an astronomical value of 69628.0, after which the performance dropped suddenly. I assume this is caused by limited memory and experience bias. During this long episode, almost whole memory was filled with highly biased experience, because the agent was holding the pole upright, never experiencing any other state. The gradient descend optimized the network using only this experience and while doing so destroyed the previously learned Q function as a whole. 
 

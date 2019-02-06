@@ -24,7 +24,7 @@ The complete code is available at [github](https://github.com/jaromiru/AI-blog/b
 
 The problem looks like this:
 
-<img style="display:block;width:100%px;margin:auto;padding:10px 0;" src="/media/dqn/cartpole-screenshot.png" alt="cartpole-screenshot" />
+<img src="/media/dqn/cartpole-screenshot.png" alt="cartpole-screenshot" />
 
 There’s a cart (represented by the black box) with attached pole, that can rotate around one axis. The cart can only go left or right and the goal is to balance the pole as long as possible.
 
@@ -52,7 +52,7 @@ The Keras library uses by default TensorFlow, which is a different library from 
 ## Implementation
 Before we jump on to the code itself, let’s think about our problem in an abstract way. There’s an agent, which interacts with the environment through actions and observations. The environment reacts to agent’s actions and supply information about itself. The agent will store the encountered experience in its memory and use its (artificial) intelligence to decide what actions to take. The next diagram shows an abstraction of the problem:
 
-<img style="display:block;width:300px;margin:auto;padding:20px 0;" src="/media/dqn/class_diag1.png" alt="class_diag" />
+<img class="w30" src="/media/dqn/class_diag1.png" alt="class_diag" />
 
 Following our intuition, we will implement four classes - *Environment*, *Agent*, *Brain* and *Memory*, with these methods:
 
@@ -166,7 +166,7 @@ This formula means that for a sample *(s, r, a, s’)* we will update the networ
 
 But when we recall our network architecture, we see, that it has multiple outputs, one for each action. 
 
-<img style="display:block;width:300px;margin:auto;padding:10px 0;" src="/media/dqn/dqn.png" alt="Deep Q-network" />
+<img class="w30" src="/media/dqn/dqn.png" alt="Deep Q-network" />
 
 We therefore have to supply a target for each of the outputs. But we want to adjust the ouptut of the network for only the one action which is part of the sample. For the other actions, we want the output to stay the same. So, the solution is simply to pass the current values as targets, which we can get by a single forward propagation.
 
@@ -269,11 +269,11 @@ It’s remarkable that with less than 200 lines of code, we can implement a Q-ne
 
 The agent usually learns to hold the pole in straight position after some time, with varying accuracy. To be able to compare results, I ran several thousand episodes with a random policy, which achieved an average reward of 22.6. Then I averaged a reward over 10 runs with our agent, each with 1000 episodes with a limit of 2000 time steps:
 
-<img style="display:block;width:100%;margin:auto;padding:10px 0;" src="/media/dqn/basic_average_reward.png" alt="basic_average_reward" />
+<img src="/media/dqn/basic_average_reward.png" alt="basic_average_reward" />
 
 We see that it is well above the average reward of a random policy, so we can conclude that our agent actually learned something. But these results are averaged over multiple runs and the celebrations would be premature. Let’s look at a single run and its reward:
 
-<img style="display:block;width:100%;margin:auto;padding:10px 0;" src="/media/dqn/basic_reward_drop.png" alt="basic_reward_drop" />
+<img src="/media/dqn/basic_reward_drop.png" alt="basic_reward_drop" />
 
 We see that there are several spots where the performance drops suddenly to zero. Clearly, our learning algorithm is unstable. What could be causing these drops and why? Does the network overfit or diverge? Or is it something else? And more importantly, can we mitigate these issues?
 

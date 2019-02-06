@@ -4,7 +4,7 @@ title: About me
 permalink: /about/
 ---
 
-![Jaromír Janisch](/media/about/jaromir.jpeg "That's me.")
+<img class="w70" src="/media/about/jaromir.jpeg" alt="Jaromír Janisch"/>
 
 Jaromír Janisch finished his Master studies as a Software Engineer at University of West Bohemia in 2012. Until 2016 he worked in several software companies, mainly as a developer. He’s been always passionate about progress in artificial intelligence and decided to join the field as a researcher. In April 2017, he joined the [AIC](http://aic.fel.cvut.cz/) group at [ČVUT](https://www.fel.cvut.cz/en/) in Prague and is working on his Ph.D. there.
 

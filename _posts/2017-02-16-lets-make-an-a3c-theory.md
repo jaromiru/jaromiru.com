@@ -55,9 +55,9 @@ We call *A(s, a)* an advantage function and it expresses how good it is to take 
 And last, let's define $$ \rho$$ as some distribution of states, saying what the probability of being in some state is. We'll use two notations - $$ \rho^{s_0}$$, which gives us a distribution of starting states in the environment and $$ \rho^\pi$$, which gives us a distribution of states under policy π. In other words, it gives us probabilities of being in a state when following policy π.
 
 ## Policy Gradient
-When we built the DQN agent, we used a neural network to approximate the *Q(s, a)* function. But now we will take a different approach. The policy *π* is just a function of state *s*, so we can approximate directly that. Our neural network with weights $$ \theta$$ will now take an state *s* as an input and output an action probability distribution, $$ \pi_\theta$$. From now on, by writing *π* it is meant $$ \pi_\theta$$, a policy parametrized by the network weights $$ \theta$.
+When we built the DQN agent, we used a neural network to approximate the *Q(s, a)* function. But now we will take a different approach. The policy *π* is just a function of state *s*, so we can approximate directly that. Our neural network with weights $$ \theta$$ will now take an state *s* as an input and output an action probability distribution, $$ \pi_\theta$$. From now on, by writing *π* it is meant $$ \pi_\theta$$, a policy parametrized by the network weights $$ \theta$$.
 
-<img style="width:70%;margin:auto;padding:10px 0;" src="/media/a3c/a3c_nn_1.png" alt="Neural network as a policy" />
+<img class="w50" src="/media/a3c/a3c_nn_1.png" alt="Neural network as a policy" />
 
 In practice, we can take an action according to this distribution or simply take the action with the highest probability, both approaches have their pros and cons.
 
@@ -97,7 +97,7 @@ The value function can also be approximated by a neural network, just as we did 
 
 What's more, we can use the same neural network for estimating *π(s)* to estimate *V(s)*. This has multiple benefits. Because we optimize both of these goals together, we learn much faster and effectively. Separate networks would very probably learn very similar low level features, which is obviously superfluous. Optimizing both goals together also acts as a regularizing element and leads to a greater stability. Exact details on how to train our network will be explained in the next article. The final architecture then looks like this:
 
-<img style="width:70%;margin:auto;padding:10px;" src="/media/a3c/a3c_nn_2.png" alt="Neural network architecture" />
+<img class="w50" src="/media/a3c/a3c_nn_2.png" alt="Neural network architecture" />
 
 Our neural network share all hidden layers and outputs two sets - *π(s)* and *V(s)*.
 

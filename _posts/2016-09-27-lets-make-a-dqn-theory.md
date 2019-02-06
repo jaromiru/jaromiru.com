@@ -55,7 +55,7 @@ However, in the problems we are trying to solve, the state usually consists of s
 
 We can’t obviously use any table to store infinite number of values. Instead, we will approximate the *Q* function with a neural network. This network will take a state as an input and produce an estimation of the *Q* function for each action. And if we use several layers, the name comes naturally - Deep Q-network (DQN).
 
-<img style="display:block;width:300px;margin:auto;padding:10px 0;" src="/media/dqn/dqn.png" alt="Deep Q-network" />
+<img class="w30" src="/media/dqn/dqn.png" alt="Deep Q-network" />
 
 But the original proof about the convergence does not hold anymore. Actually, the authors of the original research acknowledged that using a neural network to represent the *Q* function is known to be unstable[^1]. To face with this issue, they introduced several key ideas to stabilize the training, which are mainly responsible for the success we see. Let's present first of them.
 

@@ -49,7 +49,7 @@ We need to keep these properties in mind when introducing n-step return. In prac
 ## Implementation
 Let's first see the big picture. The A3C algorithm contains several key concepts that all make it work. Multiple separate environments are run in parallel, each of which contains an agent. The agents however share one neural network. Samples produced by agents are gathered in a queue, from where they are asynchronously used by a separate optimizer thread to improve the policy. The diagram below shows how these components work together:
 
-<img style="width:70%;margin:auto;padding:10px 0;" src="/media/a3c/diagram.png" alt="Component diagram" />
+<img class="w70" src="/media/a3c/diagram.png" alt="Component diagram" />
 
 We will implement four classes - `Environment`, `Agent`, `Brain` and `Optimizer`. Two of these are thread classes - `Environment` and `Optimizer`.
 
@@ -205,7 +205,7 @@ The samples from agents are gathered in the training queue through `train_push()
 #### Neural network
 The core of our new agent is a neural network that decides what to do in a given situation. There are two sets of outputs - the policy itself and the value function.
 
-<img style="width:70%;margin:auto;padding:10px;" src="/media/a3c/a3c_nn_2.png" alt="Neural network architecture" />
+<img class="w50" src="/media/a3c/a3c_nn_2.png" alt="Neural network architecture" />
 
 It is defined very easily with Keras:
 
@@ -502,11 +502,11 @@ I trained the agent on my MacBook with integrated NVIDIA GeForce GT 750M 2048MB 
 
 Training takes 30 seconds during which the algorithm goes through roughly 1000 episodes and 65 000 steps, that corresponds to about 2 200 steps per second. Results averaged over 10 runs are shown below:
 
-<img style="width:100%;margin:auto;padding:10px;" src="/media/a3c/graph.png" alt="Average achieved score" />
+<img src="/media/a3c/graph.png" alt="Average achieved score" />
 
 You can see a demonstration how a trained agent behaves below:
 
-<img style="width:100%;margin:auto;padding:10px;" src="/media/a3c/policy_animation.gif" alt="Agent animation" />
+<img class="w70" src="/media/a3c/policy_animation.gif" alt="Agent animation" />
 
 You can download the code from [GitHub](https://github.com/jaromiru/AI-blog/blob/master/CartPole-A3C.py). Feel free to use it as a base for your experiments or developing more capable agents. If you have any other questions, do not hesitate to ask me in comments.
 

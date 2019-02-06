@@ -90,13 +90,13 @@ So how do we store the experience and effectively sample from it?
 
 A naive implementation would be to have all samples in an array sorted according to their priorities. A random number *s*, $$ 0 \leq s \leq \sum_k p_k$$, would be picked and the array would be walked left to right, summing up a priority of the current element until the sum is exceeded and that element is chosen. This will select a sample with the desired probability distribution.
 
-<img style="width:100%;margin:auto;padding:20px 0;" src="https://jaromiru.files.wordpress.com/2016/11/per_bar_1.png" alt="Sorted experience"/>
+<img src="https://jaromiru.files.wordpress.com/2016/11/per_bar_1.png" alt="Sorted experience"/>
 
 But this would have a terrible efficiency: *O(n log n)* for insertion and update and *O(n)* for sampling.
 
 A first important observation is that we don’t have to actually store the array sorted. Unsorted array would do just as well. Elements with higher priorities are still picked with higher probability.
 
-<img style="width:100%;margin:auto;padding:20px 0;" src="https://jaromiru.files.wordpress.com/2016/11/per_bar_2.png" alt="Unsorted experience"/>
+<img src="https://jaromiru.files.wordpress.com/2016/11/per_bar_2.png" alt="Unsorted experience"/>
 
 This releases the need for sorting, improving the algorithm to *O(1)* for insertion and update. 
 
@@ -113,7 +113,7 @@ def retrieve(n, s):
 ```
 Following picture illustrates sampling from a tree with *s = 24*:
 
-<img style="width:100%;margin:auto;padding:20px 0;" src="https://jaromiru.files.wordpress.com/2016/11/sumtree.png" alt="Sampling from sum tree"/>
+<img src="https://jaromiru.files.wordpress.com/2016/11/sumtree.png" alt="Sampling from sum tree"/>
 
 With this effective implementation we can use large memory sizes, with hundreds of thousands or millions of samples.
 
@@ -160,11 +160,11 @@ These hyperparameters were used:
 
 It is possible to run this program on a regular computer, however it is very resource demanding. It takes about 12 GB of RAM and fully utilizes one core of CPU and whole GPU to slowly improve. In my computer it runs around 20 FPS. After about 12 hours, 750 000 steps and 700 episodes, it reached an average reward of 263 (mean reward of a random agent is 87). You can see it in action here:
 
-<img style="width:50%;margin:auto;padding:20px 0;" src="https://jaromiru.files.wordpress.com/2016/11/seaquest.gif" alt="Seaquest movie"/>
+<img class="w50" src="https://jaromiru.files.wordpress.com/2016/11/seaquest.gif" alt="Seaquest movie"/>
 
 To get better results, you have to run it for at least tens of millions of steps. The following graph shows that the improvement is indeed very slow:
 
-<img style="width:100%;margin:auto;padding:0;" src="https://jaromiru.files.wordpress.com/2016/11/seaquest-q-reward.png" alt="Seaquest reward and Q value"/>
+<img src="https://jaromiru.files.wordpress.com/2016/11/seaquest-q-reward.png" alt="Seaquest reward and Q value"/>
 
 ## Conclusion
 We addressed Double Learning and Prioritized Experience Replay techniques that both substantially improve the DQN algorithm and can be used together to make a state-of-the-art algorithm on the Atari benchmark (at least as of 18 Nov 2015 - the day *Prioritized Experience Replay*[^4] article was published).

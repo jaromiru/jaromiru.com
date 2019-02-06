@@ -24,7 +24,7 @@ The code for this article can be found at [github](https://github.com/jaromiru/A
 ## Problem
 For this article we will choose a different environment - *MountainCar-v0*, which looks like this:
 
-<img style="width:100%;margin:auto;padding:10px;" src="/media/dqn/mountaincar-v0.png" alt="Mountain car environment" />
+<img src="/media/dqn/mountaincar-v0.png" alt="Mountain car environment" />
 
 The goal is to get a car to a flag, which can be seen on the right. The car has to get from the valley, represented by the black line, by accumulating enough momentum. The task is always the same, although the starting position of the car changes with each episode.
 
@@ -102,13 +102,13 @@ The expected values at *s* is -1 and with each step backwards it decreases. We c
 
 The following graph shows a single run of the algorithm, with the values of the estimated Q function tracked every 1000 steps. Each line correspond to one point in the Q function:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/64_q_values.png" alt="64 Q value" />
+<img src="/media/dqn/64_q_values.png" alt="64 Q value" />
 
 We see that the values start at 0, quickly descending to the minimum of 100. When the learning stabilizes, the terminal transitions start to influence the estimated Q function and this information starts to propagate to other states. After 200 000 steps the Q function values at the tracked points resembles our hand-made estimates. Which line correspond to which point is clear when compared to our estimates.
 
 When we look at the learning after 1 500 000 steps, the chart looks like this:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/64_q_values_1500.png" alt="64 Q value with 1500 steps" />
+<img src="/media/dqn/64_q_values_1500.png" alt="64 Q value with 1500 steps" />
 
 We see that the values oscillate, but keep their relative distance and always tend to return to their true values. This might happen due to several reasons, which we will discuss later.
 
@@ -124,7 +124,7 @@ We can extract these values from our network by simple forward pass for each poi
 
 Using a neural network with one hidden layer consisting of 64 neurons, we can generate the following image. It shows both of our maps.
 
-<img style="width:100%;margin:auto;padding:20px 0;" src="/media/dqn/64_network_q_2.png" alt="64 value and actions" />
+<img class="w70" src="/media/dqn/64_network_q_2.png" alt="64 value and actions" />
 
 The upper part is a color map of the value function and the bottom part shows areas where the Q function is higher for *left* (0 or blue) or *right* (1 or red) action. The vertical axis corresponds to car position and the horizontal axis corresponds to car velocity. The black line shows a trajectory the agent took in a single sample episode.
 
@@ -132,7 +132,7 @@ From the bottom part we can see that the agent did a very good job in generalizi
 
 Let’s recall how the environment looks like:
 
-<img style="width:100%;margin:auto;padding:10px;" src="/media/dqn/mountaincar-v0.png" alt="Mountain car environment" />
+<img src="/media/dqn/mountaincar-v0.png" alt="Mountain car environment" />
 
 The top part in the map corresponds to position on the left slope, from which the agent can gain enough momentum to overcome the slope on the right, reaching the goal. Therefore the agent chooses the *push right* action.
 
@@ -145,15 +145,15 @@ However, the right top and bottom corners greater than -1 and are out of the pre
 ### Comparing to high order network
 Looking at the value function itself, it seems to be a little fuzzy. It’s unprobable that the true value function is that smooth in all directions. A more sophisticated network could possibly learn a better approximation. Let’s use a network with two hidden layers, each consisting of 256 neurons. First, let’s look at the Q function values graph at the same points as before:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/256x256_q_value.png" alt="256x256 Q value" />
+<img src="/media/dqn/256x256_q_value.png" alt="256x256 Q value" />
 
 Interestingly, the network converged to the true values quicker than its weaker version. But what is more surprising is that it managed to hold its values around the true values:
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/256x256_q_values_1500.png" alt="256x256 Q value with 1500 steps" />
+<img src="/media/dqn/256x256_q_values_1500.png" alt="256x256 Q value with 1500 steps" />
 
 Counterintuitively, the higher order network seems to be more stable. Let’s look at the value function visualization:
 
-<img style="width:100%;margin:auto;padding:20px 0;" src="/media/dqn/256x256_network_q.png" alt="256x256 value and actions" />
+<img class="w70" src="/media/dqn/256x256_network_q.png" alt="256x256 value and actions" />
 
 At a first glance we can see that the approximation of the value function is much better. However, the action map is a little overcomplicated. 
 
@@ -164,7 +164,7 @@ We can now conclude that the previous oscillations in the simpler network might 
 ### CartPole revisited
 Let’s go back and look at the previous problem - the *CartPole* environment. We noticed, that its performance suffered several drops, but were unable to say why. With our current knowledge we can plot a joint graph of the reward and a point at the Q function. The point is chosen to be around a sustainable upward position, therefore the agent could theoretically hold the pole upwards indefinitely starting at this state. The true value of the Q function at this state can be computed as $$ Q = \frac{1}{1-0.99} = 100$$. 
 
-<img style="width:100%;margin:auto;padding:0;" src="/media/dqn/cartpole_reward_q_value.png" alt="Cartpole reward and Q value" />
+<img src="/media/dqn/cartpole_reward_q_value.png" alt="Cartpole reward and Q value" />
 
 Looking at the graph we can see that the performance drops highly correspond to areas where the value function was overestimated. This could be caused by maximization bias and insufficient exploration.
 
