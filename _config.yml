@@ -3,12 +3,12 @@ email: author@jaromiru.com
 description: MACHINE LEARNING & AI
 author: Jaromír Janisch
 baseurl: "" 
-url: "http://jaromiru.com" 
+url: "https://jaromiru.com" 
 date_format: "%-d %B, %Y"
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 
 # Theme options
 enable_mathjax: true
