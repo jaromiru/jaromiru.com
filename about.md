@@ -21,7 +21,7 @@ Short presentation at [Adaptive Learning Agents (ALA)](http://ala2018.it.nuigalw
 <!-- J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features using Deep Reinforcement Learning*, [online version](http://ala2018.it.nuigalway.ie/papers/ALA_2018_paper_24.pdf). -->
 
 #### AAAI-2019 (January 2019, Hawaii, USA)
-Short talk on the main conference: J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features using Deep Reinforcement Learning* - [paper](/media/about/aaai19_cwcf_paper.pdf) / [slides](/media/about/aaai19_cwcf_talk.pdf) / [poster](/media/about/aaai19_cwcf_poster.pdf) / [code](https://github.com/jaromiru/cwcf)
+Short talk on the main conference: J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features using Deep Reinforcement Learning* - [paper](/media/about/aaai19_cwcf_paper.pdf) / [slides](/media/about/aaai19_cwcf_talk.pdf) / [poster](/media/about/aaai19_cwcf_poster.pdf) / [code](https://github.com/jaromiru/cwcf) / [blog](/2019/02/07/hands-on-classification-with-costly-features/)
 
 <div style="padding: 10px; background-color: #fafafa; text-align: center;" markdown="1">
 [GitHub](https://github.com/jaromiru) | [DBLP](http://dblp.org/pers/hd/j/Janisch:Jarom=iacute=r)
