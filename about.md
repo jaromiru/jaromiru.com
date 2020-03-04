@@ -27,5 +27,5 @@ Short talk on the main conference: J. Janisch, T. Pevný, V. Lisý - *Classifica
 J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features as a Sequential Decision-Making Problem* - [paper](https://rdcu.be/b2j00) [code](https://github.com/jaromiru/cwcf/tree/lagrange)
 
 <div style="padding: 10px; background-color: #fafafa; text-align: center;" markdown="1">
-[GitHub](https://github.com/jaromiru) | [DBLP](http://dblp.org/pers/hd/j/Janisch:Jarom=iacute=r) | [Google Scholar](https://scholar.google.cz/citations?user=CWyOTskAAAAJ&hl=cs)
+[GitHub](https://github.com/jaromiru) | [DBLP](http://dblp.org/pers/hd/j/Janisch:Jarom=iacute=r) | [Google Scholar](https://scholar.google.cz/citations?user=CWyOTskAAAAJ)
 </div>
