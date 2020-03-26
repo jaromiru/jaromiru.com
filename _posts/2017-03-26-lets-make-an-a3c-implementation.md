@@ -339,9 +339,9 @@ And finally, we can define the $$ L_\pi$$ itself. We need to take care to treat 
 
 Now we define $$ L_V$$. Interestingly, the error in this case is the same as the advantage function:
 
-$$e = r_0 + \gamma r_1 + \gamma^2 r_2 + ... + \gamma^{n-1} r_{n-1} + \gamma^n V(s_n) - V(s)$$
+$$e = r_0 + \gamma r_1 + \gamma^2 r_2 + ... + \gamma^{n-1} r_{n-1} + \gamma^n \underline{V(s_n)} - V(s)$$
 
-How could that be? It's because we made the approximation when computing *A(s, a)*. We didn't compute the expectation over all possible chains, but rather used one sample from a run. $$ L_V$$ then become:
+How could that be? It's because we made the approximation when computing *A(s, a)*. We didn't compute the expectation over all possible chains, but rather used one sample from a run. Note that $$\underline{V(s_n)}$$ has to be a constant to avoid gradient leak (we want to optimize $$V(s)$$, not $$V(s_n)$$. In our implemenation, it is already a constant, because we filled $$r_t$$ through a placeholder. $$ L_V $$ then become:
 
 ```python
         loss_value  = C_V * tf.square(advantage)                    
