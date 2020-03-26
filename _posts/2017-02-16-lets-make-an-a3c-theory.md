@@ -72,7 +72,7 @@ What we truly care about is how to improve this quantity. If we knew the gradien
 
 $$ \nabla_\theta\;J(\pi) = E_{s\sim\rho^\pi,\;a\sim{\pi(s)}}[ A(s, a) \cdot \nabla_\theta\;log\;\pi(a\|s) ] $$
 
-I understand that the step from $$ J(\pi)$ to $$ \nabla_\theta\;J(\pi)$ looks a bit mysterious, but a proof is out of scope of this article. The formula above is derived in the <u>Policy Gradient Theorem</u>[^3] and you can look it up if you want to delve into quite a piece of mathematics. I also direct you to a more digestible online lecture[^4], where David Silver explains the theorem and also a concept of baseline, which I already incorporated.
+I understand that the step from $$ J(\pi) $$ to $$ \nabla_\theta\;J(\pi) $$ looks a bit mysterious, but a proof is out of scope of this article. The formula above is derived in the <u>Policy Gradient Theorem</u>[^3] and you can look it up if you want to delve into quite a piece of mathematics. I also direct you to a more digestible online lecture[^4], where David Silver explains the theorem and also a concept of baseline, which I already incorporated.
 
 The formula might seem intimidating, but it's actually quite intuitive when it's broken down. First, what does it say? It informs us in what direction we have to change the weights of the neural network if we want the function $$ J(\pi)$$ to improve.
 
