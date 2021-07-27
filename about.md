@@ -27,10 +27,11 @@ Short talk on the main conference: J. Janisch, T. Pevný, V. Lisý - *Classifica
 J. Janisch, T. Pevný, V. Lisý - *Classification with Costly Features as a Sequential Decision-Making Problem* - [paper](https://rdcu.be/b2j00) / [code](https://github.com/jaromiru/cwcf/tree/lagrange)
 
 #### ICML-2021 (July 2021, online)
-Two posters at [RL4RealLife](https://sites.google.com/view/RL4RealLife#h.p_E8GavvJ-X7nT) workshop.
+Two posters at [RL4RealLife](https://sites.google.com/view/RL4RealLife#h.p_E8GavvJ-X7nT) workshop:
+
 J. Janisch, T. Pevný, V. Lisý - *Symbolic Relational Deep Reinforcement Learning based on Graph Neural Networks* [paper](https://drive.google.com/file/d/15ThfxP2_9RIxDvA_aGjiX3chpmXaeOLN/view?usp=sharing) / [code](https://github.com/jaromiru/sr-drl) / [poster](/media/about/icml21_rrl_poster.pdf)
 
-J. Janisch, T. Pevný, V. Lisý - *Hierarchical Multiple-Instance Data Classification with Costly Features* [paper](https://drive.google.com/file/d/1YKS3FK_3xKljNDVVkq2N6nbBLqqzRYEi/view?usp=sharing) / [code](https://github.com/jaromiru/rcwcf) / [poster](/media/about/icml21_rcwcf_poster.pdf)
+J. Janisch, T. Pevný, V. Lisý - *Hierarchical Multiple-Instance Data Classification with Costly Features* - [paper](https://drive.google.com/file/d/1YKS3FK_3xKljNDVVkq2N6nbBLqqzRYEi/view?usp=sharing) / [code](https://github.com/jaromiru/rcwcf) / [poster](/media/about/icml21_rcwcf_poster.pdf)
 
 <div style="padding: 10px; background-color: #fafafa; text-align: center;" markdown="1">
 [GitHub](https://github.com/jaromiru) | [DBLP](http://dblp.org/pers/hd/j/Janisch:Jarom=iacute=r) | [Google Scholar](https://scholar.google.cz/citations?user=CWyOTskAAAAJ)
